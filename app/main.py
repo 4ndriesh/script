@@ -7,8 +7,7 @@ import os
 if __name__ == "__main__":
     sheets=Sheets()
     setting = Config.inst()
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    work_path_project=os.path.join(BASE_DIR, setting.version[2])
+    work_path_project=os.path.join(setting.BASE_DIR, setting.version[2])
 
     A=sheets.read_sheet_by_excel(work_path_project=work_path_project, workSheets=setting.version[3], nrows=36,
                                  usecols=setting.version[0])
